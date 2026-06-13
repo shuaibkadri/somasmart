@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #1A2E22;
+  --color-paper: #FAF7F0;
+  --color-forest: #1B5E3A;
+  --color-forest-light: #2D8659;
+  --color-gold: #F2B134;
+  --color-gold-light: #FFD874;
+  --color-coral: #E8634A;
+  --font-display: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
