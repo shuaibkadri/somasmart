@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 type Question = {
@@ -28,6 +29,7 @@ export default function PracticeSession({
   const [sessionXp, setSessionXp] = useState(0);
   const [sessionCorrect, setSessionCorrect] = useState(0);
   const [finished, setFinished] = useState(false);
+  const router = useRouter();
 
   const question = questions[index];
   const isCorrect = selected === question?.correct_answer;
@@ -87,6 +89,8 @@ export default function PracticeSession({
           last_practice_date: today,
         })
         .eq("id", user.id);
+
+      router.refresh();
     }
   };
 
