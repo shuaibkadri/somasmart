@@ -21,7 +21,7 @@ export default function BottomNav({ role }: { role: string }) {
   const links = role === "teacher" ? teacherLinks : studentLinks;
 
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-20 sm:hidden bg-white border-t border-[var(--color-ink)]/10">
+    <nav className="fixed bottom-0 inset-x-0 z-20 bg-white border-t border-[var(--color-ink)]/10">
       <div className="max-w-3xl mx-auto grid grid-cols-4 sm:grid-cols-3">
         {links.map((link) => {
           const active = pathname === link.href;

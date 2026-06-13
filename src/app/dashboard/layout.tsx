@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import BottomNav from "@/components/BottomNav";
+import Link from "next/link";
 
 export default async function DashboardLayout({
   children,
@@ -21,12 +22,12 @@ export default async function DashboardLayout({
     .single();
 
   return (
-    <div className="flex-1 flex flex-col pb-20 sm:pb-0">
+    <div className="flex-1 flex flex-col pb-20">
       <header className="sticky top-0 z-10 bg-[var(--color-paper)]/95 backdrop-blur border-b border-[var(--color-ink)]/8">
         <div className="max-w-3xl mx-auto px-5 py-3 flex items-center justify-between">
-          <span className="font-display font-bold text-lg text-[var(--color-forest)]">
+          <Link href="/dashboard" className="font-display font-bold text-lg text-[var(--color-forest)]">
             SomaSmart
-          </span>
+          </Link>
           <div className="flex items-center gap-3 text-sm">
             <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-gold)]/15 px-3 py-1 font-semibold text-[var(--color-ink)]">
               🔥 {profile?.current_streak ?? 0}
